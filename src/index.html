@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Random Password Generator</title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Header Section -->
+            <div class="header">
+                <h1>🔐 Password Generator</h1>
+                <p>Create strong, random passwords instantly</p>
+            </div>
+
+            <!-- Password Display Section -->
+            <div class="password-section">
+                <div class="password-display">
+                    <!-- Input to display and select the generated password -->
+                    <input
+                        type="text"
+                        id="passwordInput"
+                        class="password-input"
+                        placeholder="Your password will appear here..."
+                        readonly
+                        aria-label="Generated password"
+                    />
+                    <!-- Copy to clipboard button -->
+                    <button
+                        class="btn-copy"
+                        id="copyBtn"
+                        aria-label="Copy password to clipboard"
+                    >
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Password Strength Indicator -->
+            <div class="strength-section">
+                <div class="strength-label">
+                    <span>Password Strength</span>
+                    <span class="strength-value" id="strengthValue">-</span>
+                </div>
+                <div class="strength-bar">
+                    <div class="strength-bar-fill" id="strengthBar"></div>
+                </div>
+            </div>
+
+            <!-- Configuration Section -->
+            <div class="settings-section">
+                <!-- Password Length Control -->
+                <div class="setting-group">
+                    <label class="setting-label">Password Length</label>
+                    <div class="length-display">
+                        <!-- Range slider for password length (8-128 characters) -->
+                        <input
+                            type="range"
+                            id="lengthSlider"
+                            class="length-slider"
+                            min="8"
+                            max="128"
+                            value="16"
+                            aria-label="Password length"
+                        />
+                        <!-- Display current length value -->
+                        <span class="length-value" id="lengthValue">16</span>
+                    </div>
+                </div>
+
+                <!-- Character Set Options -->
+                <div class="setting-group">
+                    <label class="setting-label">Character Sets</label>
+                    <div class="checkbox-group">
+                        <!-- Uppercase letters option -->
+                        <div class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                id="includeUppercase"
+                                checked
+                                aria-label="Include uppercase letters"
+                            />
+                            <label for="includeUppercase"
+                                >Uppercase (A-Z)</label
+                            >
+                        </div>
+
+                        <!-- Lowercase letters option -->
+                        <div class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                id="includeLowercase"
+                                checked
+                                aria-label="Include lowercase letters"
+                            />
+                            <label for="includeLowercase"
+                                >Lowercase (a-z)</label
+                            >
+                        </div>
+
+                        <!-- Numbers option -->
+                        <div class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                id="includeNumbers"
+                                checked
+                                aria-label="Include numbers"
+                            />
+                            <label for="includeNumbers">Numbers (0-9)</label>
+                        </div>
+
+                        <!-- Special characters option -->
+                        <div class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                id="includeSpecial"
+                                checked
+                                aria-label="Include special characters"
+                            />
+                            <label for="includeSpecial"
+                                >Special (!@#$%^&*)</label
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <!-- Primary: Generate new password -->
+                <button
+                    class="btn btn-primary"
+                    id="generateBtn"
+                    aria-label="Generate new password"
+                >
+                    Generate Password
+                </button>
+
+                <!-- Secondary: Reset settings to defaults -->
+                <button
+                    class="btn btn-secondary"
+                    id="resetBtn"
+                    aria-label="Reset to default settings"
+                >
+                    Reset
+                </button>
+            </div>
+
+            <!-- Reset settings explanation -->
+            <button
+                class="reset-btn"
+                id="resetSettingsBtn"
+                aria-label="Restore default settings"
+            >
+                Restore Default Settings
+            </button>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
